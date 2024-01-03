@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Header {
     private String fullName;
     private String designation;
@@ -63,5 +65,18 @@ public class Header {
 
     public void setDOB(String DOB) {
         this.DOB = DOB;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Header header = (Header) o;
+        return Objects.equals(fullName, header.fullName) && Objects.equals(designation, header.designation) && Objects.equals(emailId, header.emailId) && Objects.equals(contactNumber, header.contactNumber) && Objects.equals(address, header.address) && Objects.equals(DOB, header.DOB);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, designation, emailId, contactNumber, address, DOB);
     }
 }
