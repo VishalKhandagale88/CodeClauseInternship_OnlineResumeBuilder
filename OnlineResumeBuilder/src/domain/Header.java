@@ -68,6 +68,18 @@ public class Header {
     }
 
     @Override
+    public String toString() {
+        return "Header{" +
+                "fullName='" + fullName + '\'' +
+                ", designation='" + designation + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", DOB='" + DOB + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
