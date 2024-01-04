@@ -3,7 +3,7 @@ import functions.HeaderFunctionality;
 
 public class Main {
     public static void main(String[] args) {
-
+        // all objects
         Header headerFromUserInput = HeaderFunctionality.createHeaderFromUserInput();
         if (headerFromUserInput!=null){
             System.out.println("user header information");

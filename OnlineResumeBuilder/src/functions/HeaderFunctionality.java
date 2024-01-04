@@ -3,15 +3,13 @@ package functions;
 import domain.Header;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import static functions.ButtonAndTextStyle.createStyledButton;
-import static functions.ButtonAndTextStyle.createStyledTextField;
+import static utility.ButtonAndTextStyle.createStyledButton;
+import static utility.ButtonAndTextStyle.createStyledTextField;
 
 public class HeaderFunctionality {
     public static Header createHeaderFromUserInput() {
