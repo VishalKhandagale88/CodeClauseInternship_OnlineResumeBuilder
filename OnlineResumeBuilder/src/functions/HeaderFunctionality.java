@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 
 import static utility.ButtonAndTextStyle.createStyledButton;
 import static utility.ButtonAndTextStyle.createStyledTextField;
+import static validations.Validation.validateInput;
 
 public class HeaderFunctionality {
     public static Header createHeaderFromUserInput() {
@@ -84,13 +85,5 @@ public class HeaderFunctionality {
 
 
 
-    public static boolean validateInput(JTextField... fields) {
-        for (JTextField field : fields) {
-            if (field.getText().trim().isEmpty()) {
-                return false;
-            }
-        }
-        return true;
-    }
 
 }
