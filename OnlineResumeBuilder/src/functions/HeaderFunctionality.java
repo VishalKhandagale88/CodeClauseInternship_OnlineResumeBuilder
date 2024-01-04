@@ -4,6 +4,7 @@ import domain.Header;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
 import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,22 +36,22 @@ public class HeaderFunctionality {
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
 
         panel.add(new JLabel("Full name"));
-        panel.add(fullNameField);
+        panel.add(createStyledTextField(fullNameField));
 
         panel.add(new JLabel("designation"));
-        panel.add(designationField);
+        panel.add(createStyledTextField(designationField));
 
         panel.add(new JLabel("emailIdField"));
-        panel.add(emailIdField);
+        panel.add(createStyledTextField(emailIdField));
 
         panel.add(new JLabel("contactNumberField"));
-        panel.add(contactNumberField);
+        panel.add(createStyledTextField(contactNumberField));
 
         panel.add(new JLabel("addressField"));
-        panel.add(addressField);
+        panel.add(createStyledTextField(addressField));
 
         panel.add(new JLabel("dob : "));
-        panel.add(dobField);
+        panel.add(createStyledTextField(dobField));
 
         // panel for buttons
         JPanel buttonPanel = new JPanel();
@@ -90,6 +91,15 @@ public class HeaderFunctionality {
         String dobFieldText = dobField.getText();
         return new Header(fullNameFieldText,designationFieldText,emailIdFieldText,contactNumberFieldText,addressFieldText,dobFieldText);
 
+    }
+    public static JTextField createStyledTextField(JTextField textField){
+        Border border = BorderFactory.createCompoundBorder(
+                new EmptyBorder(0,5,0,5),
+                new MatteBorder(0,0,1,0,Color.BLACK));
+        textField.setBorder(border);
+        textField.setBackground(new Color(223, 177, 127));
+        textField.setCaretPosition(0);
+        return textField;
     }
     public static boolean validateInput(JTextField... fields){
         for (JTextField field:fields){
