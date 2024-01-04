@@ -1,5 +1,6 @@
 package functions;
 
+import domain.CareerObjective;
 import domain.Header;
 
 import javax.swing.*;
@@ -79,8 +80,8 @@ public class HeaderFunctionality {
                     );
 
                     frame.dispose();
-                    System.out.println("displosed");
-                    CareerObjectiveFunctionality.careerObjectiveWindow();
+//                    CareerObjective careerObjectiveData = CareerObjectiveFunctionality.careerObjectiveWindow();
+//                    System.out.println(careerObjectiveData);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Please fill the required details");
                 }
