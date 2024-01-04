@@ -15,9 +15,16 @@ public class HeaderFunctionality {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,300);
 
+        // make window non-resizable
+        frame.setResizable(false);
+        // set background color for the entire frame
+        frame.setBackground(new Color(223, 177, 127));
+
         JPanel panel = new JPanel(new GridLayout(7,2,10,10));
         panel.setBorder(new EmptyBorder(10,10,10,10));
 
+        // set background color for the panel
+        panel.setBackground(new Color(223, 177, 127));
 
         JTextField fullNameField = new JTextField();
         JTextField designationField = new JTextField();
@@ -49,7 +56,7 @@ public class HeaderFunctionality {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         JButton nextButton = new JButton("Next");
-
+        buttonPanel.setBackground(new Color(223, 177, 127));
         buttonPanel.add(nextButton);
 
         nextButton.addActionListener(new ActionListener() {
