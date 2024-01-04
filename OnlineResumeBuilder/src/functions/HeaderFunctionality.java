@@ -13,6 +13,8 @@ import static utility.ButtonAndTextStyle.createStyledTextField;
 import static validations.Validation.validateInput;
 
 public class HeaderFunctionality {
+    private static Header header;
+
     public static Header createHeaderFromUserInput() {
         JFrame frame = new JFrame("Enter header information");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -32,22 +34,22 @@ public class HeaderFunctionality {
         JTextField dobField = new JTextField();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        panel.add(new JLabel("Full name"));
+        panel.add(new JLabel("Full name : "));
         panel.add(createStyledTextField(fullNameField));
 
-        panel.add(new JLabel("designation"));
+        panel.add(new JLabel("designation : "));
         panel.add(createStyledTextField(designationField));
 
-        panel.add(new JLabel("emailIdField"));
+        panel.add(new JLabel("emailIdField : "));
         panel.add(createStyledTextField(emailIdField));
 
-        panel.add(new JLabel("contactNumberField"));
+        panel.add(new JLabel("contactNumberField : "));
         panel.add(createStyledTextField(contactNumberField));
 
-        panel.add(new JLabel("addressField"));
+        panel.add(new JLabel("addressField : "));
         panel.add(createStyledTextField(addressField));
 
-        panel.add(new JLabel("dob : "));
+        panel.add(new JLabel("Date of birth : "));
         panel.add(createStyledTextField(dobField));
 
         // Create an empty panel to act as the visual gap
@@ -63,24 +65,38 @@ public class HeaderFunctionality {
         frame.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
         frame.setVisible(true);
 
+
         buttonPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (validateInput(fullNameField, designationField, emailIdField, contactNumberField, addressField, dobField)) {
+                    header = new Header(fullNameField.getText(),
+                            designationField.getText(),
+                            emailIdField.getText(),
+                            contactNumberField.getText(),
+                            addressField.getText(),
+                            dobField.getText()
+                    );
+
                     frame.dispose();
+                    System.out.println("displosed");
+                    CareerObjectiveFunctionality.careerObjectiveWindow();
                 } else {
                     JOptionPane.showMessageDialog(frame, "Please fill the required details");
                 }
             }
         });
 
-        String fullNameFieldText = fullNameField.getText();
-        String designationFieldText = designationField.getText();
-        String emailIdFieldText = emailIdField.getText();
-        String contactNumberFieldText = contactNumberField.getText();
-        String addressFieldText = addressField.getText();
-        String dobFieldText = dobField.getText();
-        return new Header(fullNameFieldText, designationFieldText, emailIdFieldText, contactNumberFieldText, addressFieldText, dobFieldText);
+        // wait for frame to close before returning
+        while (frame.isVisible()) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return header;
+
     }
 
 

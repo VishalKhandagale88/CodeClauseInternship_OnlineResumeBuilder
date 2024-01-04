@@ -27,11 +27,6 @@ public class ButtonAndTextStyle {
         buttonPanel.add(buttonLabel);
         buttonPanel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                // Handle button click
-            }
-
-            @Override
             public void mouseEntered(MouseEvent e) {
                 buttonPanel.setBackground(new Color(51, 153, 255));
             }

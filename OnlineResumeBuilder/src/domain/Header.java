@@ -19,6 +19,9 @@ public class Header {
         this.DOB = DOB;
     }
 
+    public Header() {
+    }
+
     public String getFullName() {
         return fullName;
     }
