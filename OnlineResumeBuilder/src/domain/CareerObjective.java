@@ -1,4 +1,4 @@
-package functions;
+package domain;
 
 import java.util.Objects;
 
