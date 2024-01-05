@@ -29,16 +29,19 @@ public class CareerObjectiveFunctionality {
         careerObjectivePanel.setBackground(new Color(223, 177, 127));
 
         JTextField description = new JTextField();
+        careerObjectivePanel.setLayout(new BoxLayout(careerObjectivePanel,BoxLayout.Y_AXIS));
         description.setBackground(new Color(223, 177, 127));
 
         careerObjectivePanel.add(new JLabel("Description"));
         careerObjectivePanel.add(createStyledTextField(description));
 
+        JPanel gapPanel = new JPanel();
+        gapPanel.setBackground(new Color(223, 177, 127));
+
         JPanel buttonPanel = createStyledButton("Next");
         buttonPanel.setBackground(new Color(223, 177, 127));
 
-        JPanel gapPanel = new JPanel();
-        gapPanel.setBackground(new Color(223, 177, 127));
+
 
         careerObjectiveFrame.getContentPane().setLayout(new BorderLayout());
         careerObjectiveFrame.getContentPane().add(BorderLayout.CENTER, careerObjectivePanel);
