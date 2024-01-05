@@ -18,6 +18,15 @@ public class ButtonAndTextStyle {
         textField.setCaretPosition(0);
         return textField;
     }
+    public static JTextArea createStyledTextArea(JTextArea jTextArea) {
+        Border border = BorderFactory.createCompoundBorder(
+                new EmptyBorder(0, 5, 0, 5),
+                new MatteBorder(0, 0, 1, 0, Color.BLACK));
+        jTextArea.setBorder(border);
+        jTextArea.setBackground(new Color(223, 177, 127));
+        jTextArea.setCaretPosition(0);
+        return jTextArea;
+    }
 
     public static JPanel createStyledButton(String text) {
         JPanel buttonPanel = new JPanel();
