@@ -9,8 +9,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import static utility.ButtonAndTextStyle.createStyledButton;
-import static utility.ButtonAndTextStyle.createStyledTextField;
-import static validations.Validation.validateInput;
+import static utility.ButtonAndTextStyle.createStyledTextArea;
+import static validations.Validation.validateInputTextArea;
 
 public class CareerObjectiveFunctionality {
     private static CareerObjective careerObjective;
@@ -28,19 +28,18 @@ public class CareerObjectiveFunctionality {
         careerObjectivePanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         careerObjectivePanel.setBackground(new Color(223, 177, 127));
 
-        JTextField description = new JTextField();
-        careerObjectivePanel.setLayout(new BoxLayout(careerObjectivePanel,BoxLayout.Y_AXIS));
-        description.setBackground(new Color(223, 177, 127));
-
-        careerObjectivePanel.add(new JLabel("Description"));
-        careerObjectivePanel.add(createStyledTextField(description));
+//
+        JTextArea description = new JTextArea();
+        careerObjectivePanel.add(new JLabel("Description"),BorderLayout.NORTH);
+        careerObjectivePanel.add(createStyledTextArea(description));
+        description.setLineWrap(true);
+        description.setWrapStyleWord(true);
 
         JPanel gapPanel = new JPanel();
         gapPanel.setBackground(new Color(223, 177, 127));
 
         JPanel buttonPanel = createStyledButton("Next");
         buttonPanel.setBackground(new Color(223, 177, 127));
-
 
 
         careerObjectiveFrame.getContentPane().setLayout(new BorderLayout());
@@ -52,7 +51,7 @@ public class CareerObjectiveFunctionality {
         buttonPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (validateInput(description)) {
+                if (validateInputTextArea(description)) {
                     careerObjective = new CareerObjective(description.getText());
                     careerObjectiveFrame.dispose();
                 } else {

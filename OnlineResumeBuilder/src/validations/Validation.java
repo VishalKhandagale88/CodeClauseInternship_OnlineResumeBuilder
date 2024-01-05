@@ -11,4 +11,12 @@ public class Validation {
         }
         return true;
     }
+    public static boolean validateInputTextArea(JTextArea... fields) {
+        for (JTextArea field : fields) {
+            if (field.getText().trim().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
