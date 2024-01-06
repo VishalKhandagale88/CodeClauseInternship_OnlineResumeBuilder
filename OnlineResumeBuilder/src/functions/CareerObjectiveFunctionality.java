@@ -8,8 +8,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import static utility.ButtonAndTextStyle.createStyledButton;
-import static utility.ButtonAndTextStyle.createStyledTextArea;
+import static utility.ButtonAndTextStyle.*;
 import static validations.Validation.validateInputTextArea;
 
 public class CareerObjectiveFunctionality {
@@ -38,7 +37,7 @@ public class CareerObjectiveFunctionality {
         JPanel gapPanel = new JPanel();
         gapPanel.setBackground(new Color(223, 177, 127));
 
-        JPanel buttonPanel = createStyledButton("Next");
+        JPanel buttonPanel = createStyledButtonJPanel("Next");
         buttonPanel.setBackground(new Color(223, 177, 127));
 
 

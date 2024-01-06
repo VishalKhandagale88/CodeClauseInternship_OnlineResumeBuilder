@@ -9,8 +9,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import static utility.ButtonAndTextStyle.createStyledButton;
-import static utility.ButtonAndTextStyle.createStyledTextField;
+import static utility.ButtonAndTextStyle.*;
 import static validations.Validation.validateInput;
 
 public class HeaderFunctionality {
@@ -57,7 +56,7 @@ public class HeaderFunctionality {
         JPanel gapPanel = new JPanel();
         gapPanel.setBackground(new Color(223, 177, 127));
 
-        JPanel buttonPanel = createStyledButton("Next");
+        JPanel buttonPanel = createStyledButtonJPanel("Next");
         buttonPanel.setBackground(new Color(223, 177, 127));
 
         frame.getContentPane().setLayout(new BorderLayout());
