@@ -28,7 +28,7 @@ public class ButtonAndTextStyle {
         return jTextArea;
     }
 
-    public static JPanel createStyledButton(String text) {
+    public static JPanel createStyledButtonJPanel(String text) {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         JLabel buttonLabel = new JLabel(text);
@@ -46,5 +46,25 @@ public class ButtonAndTextStyle {
             }
         });
         return buttonPanel;
+    }
+    public static JButton createStyledButton(String text) {
+        JButton styledButton = new JButton(text);
+        styledButton.setContentAreaFilled(false);
+        styledButton.setBorderPainted(false);
+        styledButton.setForeground(Color.WHITE);
+
+        styledButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                styledButton.setBackground(new Color(51, 153, 255));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                styledButton.setBackground(new Color(223, 177, 127));
+            }
+        });
+
+        return styledButton;
     }
 }
