@@ -54,4 +54,15 @@ public class Education {
     public void setEndYear(String endYear) {
         this.endYear = endYear;
     }
+
+    @Override
+    public String toString() {
+        return "Education{" +
+                "courseName='" + courseName + '\'' +
+                ", instituteName='" + instituteName + '\'' +
+                ", percentile='" + percentile + '\'' +
+                ", startYear='" + startYear + '\'' +
+                ", endYear='" + endYear + '\'' +
+                '}';
+    }
 }
