@@ -15,5 +15,43 @@ public class Education {
         this.endYear = endYear;
     }
 
+    public String getCourseName() {
+        return courseName;
+    }
 
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getInstituteName() {
+        return instituteName;
+    }
+
+    public void setInstituteName(String instituteName) {
+        this.instituteName = instituteName;
+    }
+
+    public String getPercentile() {
+        return percentile;
+    }
+
+    public void setPercentile(String percentile) {
+        this.percentile = percentile;
+    }
+
+    public String getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(String startYear) {
+        this.startYear = startYear;
+    }
+
+    public String getEndYear() {
+        return endYear;
+    }
+
+    public void setEndYear(String endYear) {
+        this.endYear = endYear;
+    }
 }
