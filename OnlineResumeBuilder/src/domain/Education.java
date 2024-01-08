@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Education {
     private String courseName;
     private String instituteName;
@@ -64,5 +66,18 @@ public class Education {
                 ", startYear='" + startYear + '\'' +
                 ", endYear='" + endYear + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Education education = (Education) o;
+        return Objects.equals(courseName, education.courseName) && Objects.equals(instituteName, education.instituteName) && Objects.equals(percentile, education.percentile) && Objects.equals(startYear, education.startYear) && Objects.equals(endYear, education.endYear);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(courseName, instituteName, percentile, startYear, endYear);
     }
 }
