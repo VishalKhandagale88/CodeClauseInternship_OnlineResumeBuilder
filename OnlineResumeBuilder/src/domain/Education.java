@@ -9,6 +9,10 @@ public class Education {
     private String startYear;
     private String endYear;
 
+    public Education() {
+
+    }
+
     public Education(String courseName, String instituteName, String percentile, String startYear, String endYear) {
         this.courseName = courseName;
         this.instituteName = instituteName;
