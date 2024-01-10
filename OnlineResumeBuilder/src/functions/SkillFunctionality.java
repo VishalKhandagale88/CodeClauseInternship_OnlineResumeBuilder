@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static utility.ButtonAndTextStyle.createStyledTextField;
+import static validations.Validation.validateInput;
 
 public class SkillFunctionality {
     private static final List<Skill> skillsList = new ArrayList<>();
@@ -54,6 +55,30 @@ public class SkillFunctionality {
                 skillsFrame.repaint();
             }
         });
+
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (validateInput(titleFiled,nameField)){
+                    Skill skills = new Skill(titleFiled.getText(),nameField.getText());
+                    skillsList.add(skills);
+                    skillsFrame.dispose();
+                }else {
+                    JOptionPane.showMessageDialog(skillsFrame,"Please fill all the required details");
+                }
+            }
+        });
+        skillsFrame.getContentPane().setLayout(new BorderLayout());
+        skillsFrame.getContentPane().add(BorderLayout.CENTER, skillsPanel);
+        skillsFrame.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
+        skillsFrame.setVisible(true);
+        while (skillsFrame.isVisible()) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
         return skillsList;
     }
