@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Experience {
     private String companyName;
     private String role;
@@ -53,5 +55,18 @@ public class Experience {
 
     public void setEndYear(String endYear) {
         this.endYear = endYear;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Experience that = (Experience) o;
+        return Objects.equals(companyName, that.companyName) && Objects.equals(role, that.role) && Objects.equals(description, that.description) && Objects.equals(startYear, that.startYear) && Objects.equals(endYear, that.endYear);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(companyName, role, description, startYear, endYear);
     }
 }
