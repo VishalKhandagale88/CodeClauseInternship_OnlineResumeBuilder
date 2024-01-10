@@ -5,6 +5,8 @@ import domain.Skill;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +41,19 @@ public class SkillFunctionality {
         JButton nextButton = new JButton();
         buttonPanel.add(nextButton);
         buttonPanel.add(addMoreButton);
+
+        addMoreButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Skill skill  = new Skill(nameField.getText(),
+                        titleFiled.getText());
+                skillsList.add(skill);
+                JPanel newSkillsPanel = addSkillsPanel();
+                skillsPanel.add(newSkillsPanel);
+                skillsPanel.revalidate();
+                skillsFrame.repaint();
+            }
+        });
 
         return skillsList;
     }
