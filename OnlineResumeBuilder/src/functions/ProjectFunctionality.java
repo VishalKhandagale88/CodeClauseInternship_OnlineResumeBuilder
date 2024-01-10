@@ -1,14 +1,20 @@
 package functions;
 
+import domain.Course;
 import domain.Project;
+import domain.Skill;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utility.ButtonAndTextStyle.createStyledButton;
 import static utility.ButtonAndTextStyle.createStyledTextField;
+import static validations.Validation.validateInput;
 
 public class ProjectFunctionality {
     private static JTextField  titleField;
@@ -30,7 +36,56 @@ public class ProjectFunctionality {
 
         // initial project panel
         JPanel initialProjectPanel = createProjectPanel();
+        projectPanel.add(initialProjectPanel);
 
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel.setBackground(new Color(223, 177, 127));
+
+        JButton addMoreButton = new JButton("Add More");
+        addMoreButton.setBackground(new Color(223, 177, 127));
+
+        JButton nextButton = createStyledButton("Next");
+        buttonPanel.add(nextButton);
+        buttonPanel.add(addMoreButton);
+
+        addMoreButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Project project = new Project(titleField.getText(), aboutField.getText(),starField.getText(),endField.getText());
+                projectList.add(project);
+                JPanel newCoursePanel = createProjectPanel();
+                projectPanel.add(newCoursePanel);
+                projectFrame.revalidate();
+                projectFrame.repaint();
+            }
+        });
+
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (validateInput(titleField, aboutField,starField,endField)) {
+                    Project project = new Project(titleField.getText(), aboutField.getText(),starField.getText(),endField.getText());
+                    projectList.add(project);
+                    projectFrame.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(projectFrame, "Please fill the required details");
+                }
+            }
+        });
+
+        projectFrame.getContentPane().setLayout(new BorderLayout());
+        projectFrame.getContentPane().add(BorderLayout.CENTER, projectPanel);
+        projectFrame.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
+        projectFrame.setVisible(true);
+
+        while (projectFrame.isVisible()) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
         return projectList;
     }
