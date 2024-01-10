@@ -101,6 +101,9 @@ public class ProjectFunctionality {
         aboutField = createStyledTextArea(new JTextArea());
         starField = createStyledTextField(new JTextField());
         endField = createStyledTextField(new JTextField());
+        aboutField.setLineWrap(true); // Enable line wrapping
+        aboutField.setWrapStyleWord(true); // Wrap at word boundaries
+
         coursePanel.add(new JLabel("Project title:"));
         coursePanel.add(titleField);
         coursePanel.add(new JLabel("Started on"));
