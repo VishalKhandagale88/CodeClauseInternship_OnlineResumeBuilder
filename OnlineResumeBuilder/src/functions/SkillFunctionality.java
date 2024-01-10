@@ -30,7 +30,8 @@ public class SkillFunctionality {
         skillsPanel.add(initialPanel);
 
         JPanel buttonPanel = new JPanel();
-
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        buttonPanel.setBackground(new Color(223,177,127));
 
 
         return skillsList;
