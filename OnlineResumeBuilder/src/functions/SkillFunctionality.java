@@ -36,6 +36,9 @@ public class SkillFunctionality {
         JButton addMoreButton = new JButton("Add More");
         addMoreButton.setBackground(new Color(223,177,127));
 
+        JButton nextButton = new JButton();
+        buttonPanel.add(nextButton);
+        buttonPanel.add(addMoreButton);
 
         return skillsList;
     }
