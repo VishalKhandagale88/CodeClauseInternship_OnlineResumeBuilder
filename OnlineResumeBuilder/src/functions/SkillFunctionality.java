@@ -15,7 +15,7 @@ import static validations.Validation.validateInput;
 
 public class SkillFunctionality {
     private static final List<Skill> skillsList = new ArrayList<>();
-    private static JTextField titleFiled;
+
     private static JTextField nameField;
 
     public static List<Skill> skillsWindow() {
@@ -39,15 +39,14 @@ public class SkillFunctionality {
         JButton addMoreButton = new JButton("Add More");
         addMoreButton.setBackground(new Color(223,177,127));
 
-        JButton nextButton = new JButton();
+        JButton nextButton = new JButton("Next");
         buttonPanel.add(nextButton);
         buttonPanel.add(addMoreButton);
 
         addMoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Skill skill  = new Skill(nameField.getText(),
-                        titleFiled.getText());
+                Skill skill  = new Skill(nameField.getText());
                 skillsList.add(skill);
                 JPanel newSkillsPanel = addSkillsPanel();
                 skillsPanel.add(newSkillsPanel);
@@ -59,8 +58,8 @@ public class SkillFunctionality {
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (validateInput(titleFiled,nameField)){
-                    Skill skills = new Skill(titleFiled.getText(),nameField.getText());
+                if (validateInput(nameField)){
+                    Skill skills = new Skill(nameField.getText());
                     skillsList.add(skills);
                     skillsFrame.dispose();
                 }else {
@@ -87,12 +86,11 @@ public class SkillFunctionality {
         JPanel panel = new JPanel(new GridLayout(5, 2, 5, 5));
         panel.setBackground(new Color(223, 177, 127));
 
-        titleFiled = createStyledTextField(new JTextField());
+
         nameField = createStyledTextField(new JTextField());
 
-        panel.add(new JLabel("Course Name:"));
-        panel.add(titleFiled);
-        panel.add(new JLabel("Institute Name:"));
+
+        panel.add(new JLabel("Skill Name:"));
         panel.add(nameField);
 
 
