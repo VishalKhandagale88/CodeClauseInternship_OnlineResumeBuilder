@@ -1,8 +1,6 @@
 package functions;
 
-import domain.Course;
 import domain.Project;
-import domain.Skill;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,25 +12,30 @@ import java.util.List;
 
 import static utility.ButtonAndTextStyle.createStyledButton;
 import static utility.ButtonAndTextStyle.createStyledTextField;
+import static utility.ButtonAndTextStyle.createStyledTextArea;
 import static validations.Validation.validateInput;
+import static validations.Validation.validateInputTextArea;
 
 public class ProjectFunctionality {
-    private static JTextField  titleField;
-    private static JTextField aboutField;
+    private static JTextField titleField;
+    private static JTextArea aboutField;
     private static JTextField starField;
     private static JTextField endField;
     private static List<Project> projectList = new ArrayList<>();
 
-    public static List<Project> projectWindow(){
+    public static List<Project> projectWindow() {
         JFrame projectFrame = new JFrame();
         projectFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        projectFrame.setSize(400,300);
-        projectFrame.setBackground(new Color(223,177,127));
+        projectFrame.setSize(400, 300);
+        projectFrame.setBackground(new Color(223, 177, 127));
 
         JPanel projectPanel = new JPanel();
-        projectPanel.setLayout(new BoxLayout(projectPanel,BoxLayout.Y_AXIS));
-        projectPanel.setBorder(new EmptyBorder(10,10,10,10));
-        projectPanel.setBackground(new Color(223,177,127));
+        projectPanel.setLayout(new BoxLayout(projectPanel, BoxLayout.Y_AXIS));
+        projectPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        projectPanel.setBackground(new Color(223, 177, 127));
+
+        JScrollPane scrollPane = new JScrollPane(projectPanel);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS); // Set the scrollbar policy
 
         // initial project panel
         JPanel initialProjectPanel = createProjectPanel();
@@ -52,7 +55,7 @@ public class ProjectFunctionality {
         addMoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Project project = new Project(titleField.getText(), aboutField.getText(),starField.getText(),endField.getText());
+                Project project = new Project(titleField.getText(), aboutField.getText(), starField.getText(), endField.getText());
                 projectList.add(project);
                 JPanel newCoursePanel = createProjectPanel();
                 projectPanel.add(newCoursePanel);
@@ -64,8 +67,8 @@ public class ProjectFunctionality {
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (validateInput(titleField, aboutField,starField,endField)) {
-                    Project project = new Project(titleField.getText(), aboutField.getText(),starField.getText(),endField.getText());
+                if (validateInput(titleField, starField, endField) && validateInputTextArea(aboutField)) {
+                    Project project = new Project(titleField.getText(), aboutField.getText(), starField.getText(), endField.getText());
                     projectList.add(project);
                     projectFrame.dispose();
                 } else {
@@ -75,7 +78,7 @@ public class ProjectFunctionality {
         });
 
         projectFrame.getContentPane().setLayout(new BorderLayout());
-        projectFrame.getContentPane().add(BorderLayout.CENTER, projectPanel);
+        projectFrame.getContentPane().add(BorderLayout.CENTER, scrollPane); // Add the scroll pane instead of projectPanel
         projectFrame.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
         projectFrame.setVisible(true);
 
@@ -91,11 +94,11 @@ public class ProjectFunctionality {
     }
 
     private static JPanel createProjectPanel() {
-        JPanel coursePanel = new JPanel(new GridLayout(2, 2, 2, 2));
+        JPanel coursePanel = new JPanel(new GridLayout(4, 1, 2, 2));
         coursePanel.setBackground(new Color(223, 177, 127));
 
         titleField = createStyledTextField(new JTextField());
-        aboutField = createStyledTextField(new JTextField());
+        aboutField = createStyledTextArea(new JTextArea());
         starField = createStyledTextField(new JTextField());
         endField = createStyledTextField(new JTextField());
         coursePanel.add(new JLabel("Project title:"));

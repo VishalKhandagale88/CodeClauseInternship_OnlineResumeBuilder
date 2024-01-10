@@ -19,7 +19,9 @@ public class Main {
 //        List<Education> educationList = EducationFunctionality.EducationWindow();
 //        System.out.println(educationList);
 
-        List<Skill> skills = SkillFunctionality.skillsWindow();
-        System.out.println(skills);
+//        List<Skill> skills = SkillFunctionality.skillsWindow();
+//        System.out.println(skills);
+        List<Project> projectList = ProjectFunctionality.projectWindow();
+        System.out.println(projectList);
     }
 }
