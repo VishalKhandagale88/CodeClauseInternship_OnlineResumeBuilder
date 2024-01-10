@@ -69,4 +69,15 @@ public class Experience {
     public int hashCode() {
         return Objects.hash(companyName, role, description, startYear, endYear);
     }
+
+    @Override
+    public String toString() {
+        return "Experience{" +
+                "companyName='" + companyName + '\'' +
+                ", role='" + role + '\'' +
+                ", description='" + description + '\'' +
+                ", startYear='" + startYear + '\'' +
+                ", endYear='" + endYear + '\'' +
+                '}';
+    }
 }
