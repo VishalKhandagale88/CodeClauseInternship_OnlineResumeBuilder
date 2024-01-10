@@ -15,7 +15,6 @@ import static validations.Validation.validateInput;
 
 public class SkillFunctionality {
     private static final List<Skill> skillsList = new ArrayList<>();
-
     private static JTextField nameField;
 
     public static List<Skill> skillsWindow() {
@@ -29,15 +28,19 @@ public class SkillFunctionality {
         skillsPanel.setBorder(new EmptyBorder(10, 10, 10, 1));
         skillsPanel.setBackground(new Color(223, 177, 127));
 
+        // Wrap skillsPanel in a JScrollPane
+        JScrollPane scrollPane = new JScrollPane(skillsPanel);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
         JPanel initialPanel = addSkillsPanel();
         skillsPanel.add(initialPanel);
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        buttonPanel.setBackground(new Color(223,177,127));
+        buttonPanel.setBackground(new Color(223, 177, 127));
 
         JButton addMoreButton = new JButton("Add More");
-        addMoreButton.setBackground(new Color(223,177,127));
+        addMoreButton.setBackground(new Color(223, 177, 127));
 
         JButton nextButton = new JButton("Next");
         buttonPanel.add(nextButton);
@@ -46,7 +49,7 @@ public class SkillFunctionality {
         addMoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Skill skill  = new Skill(nameField.getText());
+                Skill skill = new Skill(nameField.getText());
                 skillsList.add(skill);
                 JPanel newSkillsPanel = addSkillsPanel();
                 skillsPanel.add(newSkillsPanel);
@@ -58,19 +61,22 @@ public class SkillFunctionality {
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (validateInput(nameField)){
+                if (validateInput(nameField)) {
                     Skill skills = new Skill(nameField.getText());
                     skillsList.add(skills);
                     skillsFrame.dispose();
-                }else {
-                    JOptionPane.showMessageDialog(skillsFrame,"Please fill all the required details");
+                } else {
+                    JOptionPane.showMessageDialog(skillsFrame, "Please fill all the required details");
                 }
             }
         });
+
         skillsFrame.getContentPane().setLayout(new BorderLayout());
-        skillsFrame.getContentPane().add(BorderLayout.CENTER, skillsPanel);
+        // Add the JScrollPane instead of skillsPanel directly
+        skillsFrame.getContentPane().add(BorderLayout.CENTER, scrollPane);
         skillsFrame.getContentPane().add(BorderLayout.SOUTH, buttonPanel);
         skillsFrame.setVisible(true);
+
         while (skillsFrame.isVisible()) {
             try {
                 Thread.sleep(100);
@@ -86,15 +92,11 @@ public class SkillFunctionality {
         JPanel panel = new JPanel(new GridLayout(5, 2, 5, 5));
         panel.setBackground(new Color(223, 177, 127));
 
-
         nameField = createStyledTextField(new JTextField());
-
 
         panel.add(new JLabel("Skill Name:"));
         panel.add(nameField);
 
-
         return panel;
     }
-
 }
