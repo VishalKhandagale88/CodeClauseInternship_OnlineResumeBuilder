@@ -33,6 +33,9 @@ public class SkillFunctionality {
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.setBackground(new Color(223,177,127));
 
+        JButton addMoreButton = new JButton("Add More");
+        addMoreButton.setBackground(new Color(223,177,127));
+
 
         return skillsList;
     }
