@@ -26,7 +26,8 @@ public class EducationFunctionality {
     public static List<Education> EducationWindow() {
         JFrame educationFrame = new JFrame("Education");
         educationFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        educationFrame.setSize(400, 300);
+        educationFrame.setSize(500, 400);
+
         educationFrame.setBackground(new Color(223, 177, 127));
 
         JPanel educationPanel = new JPanel();
