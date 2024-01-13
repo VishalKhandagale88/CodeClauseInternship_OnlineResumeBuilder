@@ -18,7 +18,8 @@ public class CareerObjectiveFunctionality {
 
         JFrame careerObjectiveFrame = new JFrame("About me");
         careerObjectiveFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        careerObjectiveFrame.setSize(400, 300);
+        careerObjectiveFrame.setSize(500, 400);
+
         careerObjectiveFrame.setResizable(false);
         careerObjectiveFrame.setBackground(new Color(223, 177, 127));
 
