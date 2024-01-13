@@ -25,7 +25,10 @@ public class Main {
 //        List<Project> projectList = ProjectFunctionality.projectWindow();
 //        System.out.println(projectList);
 
-        List<Experience> experienceWindow = ExperienceFunctionality.experienceWindow();
-        System.out.println(experienceWindow);
+//        List<Experience> experienceWindow = ExperienceFunctionality.experienceWindow();
+//        System.out.println(experienceWindow);
+
+        String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
+        System.out.println(hobbiesWindow);
     }
 }
