@@ -18,7 +18,8 @@ public class HeaderFunctionality {
     public static Header createHeaderFromUserInput() {
         JFrame frame = new JFrame("Enter header information");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(500, 400);
+
         frame.setResizable(false);
         frame.setBackground(new Color(223, 177, 127));
 
