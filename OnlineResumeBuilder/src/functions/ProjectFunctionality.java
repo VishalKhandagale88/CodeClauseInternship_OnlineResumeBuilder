@@ -26,7 +26,8 @@ public class ProjectFunctionality {
     public static List<Project> projectWindow() {
         JFrame projectFrame = new JFrame("Your Projects");
         projectFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        projectFrame.setSize(400, 300);
+        projectFrame.setSize(500, 400);
+
         projectFrame.setBackground(new Color(223, 177, 127));
 
         JPanel projectPanel = new JPanel();
