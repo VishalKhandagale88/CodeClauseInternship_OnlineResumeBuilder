@@ -20,7 +20,8 @@ public class SkillFunctionality {
     public static List<Skill> skillsWindow() {
         JFrame skillsFrame = new JFrame("Skills");
         skillsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        skillsFrame.setSize(400, 300);
+        skillsFrame.setSize(500, 400);
+
         skillsFrame.setBackground(new Color(223, 177, 127));
 
         JPanel skillsPanel = new JPanel();
