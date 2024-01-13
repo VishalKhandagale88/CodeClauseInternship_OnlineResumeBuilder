@@ -22,7 +22,8 @@ public class CourseFunctionality {
     public static List<Course> CoursesWindow() {
         JFrame coursesFrame = new JFrame();
         coursesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        coursesFrame.setSize(400, 300);
+        coursesFrame.setSize(500, 400);
+
         coursesFrame.setBackground(new Color(223, 177, 127));
 
         // course panel
