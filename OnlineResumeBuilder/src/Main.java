@@ -21,7 +21,11 @@ public class Main {
 
 //        List<Skill> skills = SkillFunctionality.skillsWindow();
 //        System.out.println(skills);
-        List<Project> projectList = ProjectFunctionality.projectWindow();
-        System.out.println(projectList);
+
+//        List<Project> projectList = ProjectFunctionality.projectWindow();
+//        System.out.println(projectList);
+
+        List<Experience> experienceWindow = ExperienceFunctionality.experienceWindow();
+        System.out.println(experienceWindow);
     }
 }

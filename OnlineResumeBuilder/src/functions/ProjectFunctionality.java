@@ -24,7 +24,7 @@ public class ProjectFunctionality {
     private static List<Project> projectList = new ArrayList<>();
 
     public static List<Project> projectWindow() {
-        JFrame projectFrame = new JFrame();
+        JFrame projectFrame = new JFrame("Your Projects");
         projectFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         projectFrame.setSize(400, 300);
         projectFrame.setBackground(new Color(223, 177, 127));
