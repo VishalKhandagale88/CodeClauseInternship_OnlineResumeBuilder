@@ -8,25 +8,25 @@ public class Main {
         // all objects
 
 //
-//        Header headerFromUserInput = HeaderFunctionality.createHeaderFromUserInput();
-//        System.out.println(headerFromUserInput);
-//        CareerObjective careerObjective = CareerObjectiveFunctionality.careerObjectiveWindow();
-//        System.out.println(careerObjective);
-//
-//        List<Course> courses = CourseFunctionality.CoursesWindow();
-//        System.out.println(courses);
-//
-//        List<Education> educationList = EducationFunctionality.EducationWindow();
-//        System.out.println(educationList);
+        Header headerFromUserInput = HeaderFunctionality.createHeaderFromUserInput();
+        System.out.println(headerFromUserInput);
+        CareerObjective careerObjective = CareerObjectiveFunctionality.careerObjectiveWindow();
+        System.out.println(careerObjective);
 
-//        List<Skill> skills = SkillFunctionality.skillsWindow();
-//        System.out.println(skills);
+        List<Course> courses = CourseFunctionality.CoursesWindow();
+        System.out.println(courses);
 
-//        List<Project> projectList = ProjectFunctionality.projectWindow();
-//        System.out.println(projectList);
+        List<Education> educationList = EducationFunctionality.EducationWindow();
+        System.out.println(educationList);
 
-//        List<Experience> experienceWindow = ExperienceFunctionality.experienceWindow();
-//        System.out.println(experienceWindow);
+        List<Skill> skills = SkillFunctionality.skillsWindow();
+        System.out.println(skills);
+
+        List<Project> projectList = ProjectFunctionality.projectWindow();
+        System.out.println(projectList);
+
+        List<Experience> experienceWindow = ExperienceFunctionality.experienceWindow();
+        System.out.println(experienceWindow);
 
         String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
         System.out.println(hobbiesWindow);

@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utility.ButtonAndTextStyle.createStyledButton;
 import static utility.ButtonAndTextStyle.createStyledTextField;
 import static validations.Validation.validateInput;
 
@@ -43,7 +44,7 @@ public class SkillFunctionality {
         JButton addMoreButton = new JButton("Add More");
         addMoreButton.setBackground(new Color(223, 177, 127));
 
-        JButton nextButton = new JButton("Next");
+        JButton nextButton = createStyledButton("Next");
         buttonPanel.add(nextButton);
         buttonPanel.add(addMoreButton);
 

@@ -16,7 +16,7 @@ public class HobbiesFunctionality {
 
 
     public static String createHobbiesWindow() {
-        JFrame inputFrame = new JFrame("Single Input");
+        JFrame inputFrame = new JFrame("Your Hobbies");
         inputFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         inputFrame.setSize(400, 150);
         inputFrame.setBackground(new Color(223, 177, 127));
