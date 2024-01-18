@@ -1,6 +1,5 @@
 package functions;
 
-import domain.CareerObjective;
 import domain.Header;
 
 import javax.swing.*;

@@ -1,34 +1,31 @@
+import com.itextpdf.kernel.geom.PageSize;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
 import domain.*;
 import functions.*;
 
+
+import java.io.FileNotFoundException;
 import java.util.List;
 
+
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         // all objects
 
 //
         Header headerFromUserInput = HeaderFunctionality.createHeaderFromUserInput();
-        System.out.println(headerFromUserInput);
-        CareerObjective careerObjective = CareerObjectiveFunctionality.careerObjectiveWindow();
-        System.out.println(careerObjective);
+//        CareerObjective careerObjective = CareerObjectiveFunctionality.careerObjectiveWindow();
+//        List<Course> courses = CourseFunctionality.CoursesWindow();
+//        List<Education> educationList = EducationFunctionality.EducationWindow();
+//        List<Skill> skills = SkillFunctionality.skillsWindow();
+//        List<Project> projectList = ProjectFunctionality.projectWindow();
+//        List<Experience> experienceList = ExperienceFunctionality.experienceWindow();
+//        String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
 
-        List<Course> courses = CourseFunctionality.CoursesWindow();
-        System.out.println(courses);
+        PDFGenerator.generatePDF(headerFromUserInput);
 
-        List<Education> educationList = EducationFunctionality.EducationWindow();
-        System.out.println(educationList);
-
-        List<Skill> skills = SkillFunctionality.skillsWindow();
-        System.out.println(skills);
-
-        List<Project> projectList = ProjectFunctionality.projectWindow();
-        System.out.println(projectList);
-
-        List<Experience> experienceWindow = ExperienceFunctionality.experienceWindow();
-        System.out.println(experienceWindow);
-
-        String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
-        System.out.println(hobbiesWindow);
     }
 }

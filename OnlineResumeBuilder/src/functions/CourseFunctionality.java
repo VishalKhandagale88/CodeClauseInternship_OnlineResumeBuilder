@@ -20,7 +20,7 @@ public class CourseFunctionality {
     private static List<Course> courseList = new ArrayList<>();
 
     public static List<Course> CoursesWindow() {
-        JFrame coursesFrame = new JFrame();
+        JFrame coursesFrame = new JFrame("Your courses");
         coursesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         coursesFrame.setSize(500, 400);
 
