@@ -17,7 +17,7 @@ public class Main {
 
 //
         Header headerFromUserInput = HeaderFunctionality.createHeaderFromUserInput();
-//        CareerObjective careerObjective = CareerObjectiveFunctionality.careerObjectiveWindow();
+        CareerObjective careerObjective = CareerObjectiveFunctionality.careerObjectiveWindow();
 //        List<Course> courses = CourseFunctionality.CoursesWindow();
 //        List<Education> educationList = EducationFunctionality.EducationWindow();
 //        List<Skill> skills = SkillFunctionality.skillsWindow();
@@ -25,7 +25,7 @@ public class Main {
 //        List<Experience> experienceList = ExperienceFunctionality.experienceWindow();
 //        String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
 
-        PDFGenerator.generatePDF(headerFromUserInput);
+        PDFGenerator.generateTextFile(headerFromUserInput);
 
     }
 }
