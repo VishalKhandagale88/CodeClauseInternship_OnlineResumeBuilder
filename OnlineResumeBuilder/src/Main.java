@@ -22,10 +22,11 @@ public class Main {
         List<Education> educationList = EducationFunctionality.EducationWindow();
         List<Skill> skills = SkillFunctionality.skillsWindow();
         List<Project> projectList = ProjectFunctionality.projectWindow();
-//        List<Experience> experienceList = ExperienceFunctionality.experienceWindow();
+        List<Experience> experienceList = ExperienceFunctionality.experienceWindow();
 //        String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
 
-        PDFGenerator.generateTextFile(headerFromUserInput,careerObjective,courses,educationList,skills,projectList);
+        PDFGenerator.generateTextFile(headerFromUserInput,careerObjective,courses,
+                educationList,skills,projectList,experienceList);
 
     }
 }
