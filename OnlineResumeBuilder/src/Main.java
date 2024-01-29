@@ -21,11 +21,11 @@ public class Main {
         List<Course> courses = CourseFunctionality.CoursesWindow();
         List<Education> educationList = EducationFunctionality.EducationWindow();
         List<Skill> skills = SkillFunctionality.skillsWindow();
-//        List<Project> projectList = ProjectFunctionality.projectWindow();
+        List<Project> projectList = ProjectFunctionality.projectWindow();
 //        List<Experience> experienceList = ExperienceFunctionality.experienceWindow();
 //        String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
 
-        PDFGenerator.generateTextFile(headerFromUserInput,careerObjective,courses,educationList,skills);
+        PDFGenerator.generateTextFile(headerFromUserInput,careerObjective,courses,educationList,skills,projectList);
 
     }
 }

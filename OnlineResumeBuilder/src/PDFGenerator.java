@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PDFGenerator {
 
-    static void generateTextFile(Header header, CareerObjective careerObjective, List<Course> courses, List<Education> educations, List<Skill> skills) {
+    static void generateTextFile(Header header, CareerObjective careerObjective, List<Course> courses, List<Education> educations, List<Skill> skills,List<Project> projects) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("D:\\New folder\\code clause internship\\resume--demo.txt"))) {
             // Writing values to the file
             writer.println("Name: " + header.getFullName());
@@ -45,7 +45,11 @@ public class PDFGenerator {
                 writer.println("-------------------------------------------------------------------");
             }
             writer.println("**************************************************************");
-
+            for (Project project : projects){
+                writer.println("Title : "+project.getTitle()+"                                    "+project.getStar()+"-"+project.getEnd());
+                writer.println("About : ");
+                writer.println(project.getAbout());
+            }
 
 
             System.out.println("Values written to the file successfully.");
