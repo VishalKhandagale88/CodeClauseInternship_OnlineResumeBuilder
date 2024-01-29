@@ -14,7 +14,7 @@ import java.util.List;
 public class PDFGenerator {
 
     static void generateTextFile(Header header, CareerObjective careerObjective, List<Course> courses, List<Education> educations,
-                                 List<Skill> skills,List<Project> projects,List<Experience> experiences) {
+                                 List<Skill> skills,List<Project> projects,List<Experience> experiences,String hobbies) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("D:\\New folder\\code clause internship\\resume--demo.txt"))) {
             // Writing values to the file
             writer.println("Name: " + header.getFullName());
@@ -60,7 +60,8 @@ public class PDFGenerator {
                 writer.println("-------------------------------------------------------------------");
             }
             writer.println("**************************************************************");
-
+            writer.println("Hobbies");
+            writer.println(hobbies);
 
 
             System.out.println("Values written to the file successfully.");
