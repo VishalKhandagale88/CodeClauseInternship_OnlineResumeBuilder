@@ -1,7 +1,4 @@
-import domain.CareerObjective;
-import domain.Course;
-import domain.Education;
-import domain.Header;
+import domain.*;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -16,7 +13,7 @@ import java.util.List;
 
 public class PDFGenerator {
 
-    static void generateTextFile(Header header, CareerObjective careerObjective, List<Course> courses, List<Education> educationList) {
+    static void generateTextFile(Header header, CareerObjective careerObjective, List<Course> courses, List<Education> educations, List<Skill> skills) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("D:\\New folder\\code clause internship\\resume--demo.txt"))) {
             // Writing values to the file
             writer.println("Name: " + header.getFullName());
@@ -36,12 +33,18 @@ public class PDFGenerator {
                 writer.println("-------------------------------------------------------------------");
             }
             writer.println("**************************************************************");
-            for (Education education : educationList){
+            for (Education education : educations){
                 writer.println("Education : "+education.getCourseName() +"                          "+education.getStartYear()+"-"+education.getEndYear());
                 writer.println("Institute Name : "+education.getInstituteName());
                 writer.println("Percentile : "+education.getPercentile());
                 writer.println("-------------------------------------------------------------------");
             }
+            writer.println("**************************************************************");
+            for (Skill skill : skills){
+                writer.println("Name "+skill.getName());
+                writer.println("-------------------------------------------------------------------");
+            }
+            writer.println("**************************************************************");
 
 
 

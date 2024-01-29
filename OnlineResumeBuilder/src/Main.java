@@ -20,12 +20,12 @@ public class Main {
         CareerObjective careerObjective = CareerObjectiveFunctionality.careerObjectiveWindow();
         List<Course> courses = CourseFunctionality.CoursesWindow();
         List<Education> educationList = EducationFunctionality.EducationWindow();
-//        List<Skill> skills = SkillFunctionality.skillsWindow();
+        List<Skill> skills = SkillFunctionality.skillsWindow();
 //        List<Project> projectList = ProjectFunctionality.projectWindow();
 //        List<Experience> experienceList = ExperienceFunctionality.experienceWindow();
 //        String hobbiesWindow = HobbiesFunctionality.createHobbiesWindow();
 
-        PDFGenerator.generateTextFile(headerFromUserInput,careerObjective,courses,educationList);
+        PDFGenerator.generateTextFile(headerFromUserInput,careerObjective,courses,educationList,skills);
 
     }
 }
